@@ -23,8 +23,16 @@ public class LineItem {
 	public int getQuantity() {
 		return qty;
 	}
-
     double totalAmount() {
         return p * qty;
+    }
+    double totalSalesTax(){
+    	return this.totalAmount()*.10;
+    }
+    double totalAmountIncludeTax(){
+    	return this.totalAmount()+this.totalSalesTax();
+    }
+    public String getAllInfo(){
+    	return desc+'\t'+p+'\t'+qty+'\t'+this.totalAmount()+'\n';
     }
 }
